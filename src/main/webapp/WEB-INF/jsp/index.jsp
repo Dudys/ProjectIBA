@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" session="false" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="pt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="joda" uri="http://www.joda.org/joda/time/tags" %>
 
 <pt:pagetemplate title="Student">
 <jsp:attribute name="body">
@@ -12,7 +13,7 @@
         Last name: <c:out value="${student.lastname}"/>
     </div>
     <div class="container">
-        Birth date: <c:out value="${student.birthdate}"/>
+        Birth date: <joda:format value="${student.birthdate}" style="M-"/>
     </div>
     <div class="container">
         Sex: <c:if test="${student.sex}">Man</c:if> <c:if test="${!student.sex}"> Woman</c:if>
