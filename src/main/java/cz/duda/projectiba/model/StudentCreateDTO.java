@@ -10,14 +10,12 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
- * Class represents entity Student.
+ * Creating DTO for entity Student.
  *
  * @author Jan Duda
  */
 @Data
-public class Student {
-
-    private long id;
+public class StudentCreateDTO {
 
     @NotNull
     @Pattern(regexp = "^([^0-9]*)")
@@ -35,5 +33,4 @@ public class Student {
     private LocalDate birthdate;
 
     private boolean sex;
-
 }

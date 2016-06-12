@@ -2,11 +2,18 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="pt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<pt:pagetemplate title="New Student">
+<pt:pagetemplate title="Update Student">
 <jsp:attribute name="body">
 
-    <form:form method="post" action="${pageContext.request.contextPath}/student/new"
-               modelAttribute="newStudent" cssClass="form-horizontal">
+    <form:form method="post" action="${pageContext.request.contextPath}/student/update"
+               modelAttribute="updateStudent" cssClass="form-horizontal">
+
+        <div class="form-group ${firstname_error?'has-error':''}">
+            <form:label path="id" cssClass="col-sm-2 control-label">id</form:label>
+            <div class="col-sm-10">
+                <form:input path="id" readonly="true" cssClass="form-control"/>
+            </div>
+        </div>
         <div class="form-group ${firstname_error?'has-error':''}">
             <form:label path="firstname" cssClass="col-sm-2 control-label">First name</form:label>
             <div class="col-sm-10">
@@ -36,7 +43,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Create student</button>
+        <button class="btn btn-primary" type="submit">Update student</button>
     </form:form>
 </jsp:attribute>
 </pt:pagetemplate>

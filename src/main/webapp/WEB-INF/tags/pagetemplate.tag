@@ -28,12 +28,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/controller">Project IBA</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/student">Project IBA</a>
         </div>
     </div>
 </nav>
 
 <div class="container">
+
+    <c:if test="${not empty alert_success}">
+        <div class="alert alert-success fade in" role="alert">
+            <c:out value="${alert_success}"/>
+        </div>
+    </c:if>
 
     <div class="container">
         <div class="page-header">
