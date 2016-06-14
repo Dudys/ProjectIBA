@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Creating DTO for entity Student.
@@ -15,6 +16,7 @@ import javax.validation.constraints.Size;
  * @author Jan Duda
  */
 @Data
+@XmlRootElement
 public class StudentCreateDTO {
 
     @NotNull

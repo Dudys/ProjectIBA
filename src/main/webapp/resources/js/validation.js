@@ -29,8 +29,7 @@ $(function() {
                 maxlength: 60
             },
             birthdate: {
-                required: true,
-                date: true
+                required: true
             }
         },
         messages: {
@@ -47,8 +46,7 @@ $(function() {
                 maxlength: 'Last name cannot have more more than 60 characters'
             },
             birthdate: {
-                required: "Birth date cannot be empty",
-                date: "Wrong format of birth date, format must be dd.MM.yyyy"
+                required: "Birth date cannot be empty"
             }
         }
     });
