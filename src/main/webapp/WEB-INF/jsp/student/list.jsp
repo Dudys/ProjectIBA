@@ -20,6 +20,8 @@
                 <th>Birth date</th>
                 <th>Sex</th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +37,11 @@
                     </td>
                     <td>
                         <a href="${pageContext.request.contextPath}/student/detail/${student.id}" class="btn btn-primary">Detail</a>
+                    </td>
+                    <td>
                         <a href="${pageContext.request.contextPath}/student/update/${student.id}" class="btn btn-primary">Update</a>
+                    </td>
+                    <td>
                         <form method="post" action="${pageContext.request.contextPath}/student/delete/${student.id}">
                             <button type="submit" class="btn btn-primary">Delete</button>
                         </form>

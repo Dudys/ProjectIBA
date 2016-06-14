@@ -1,7 +1,7 @@
 package cz.duda.projectiba.service;
 
 import cz.duda.projectiba.model.Student;
-import cz.duda.projectiba.model.StudentCreateDTO;
+import cz.duda.projectiba.dto.StudentCreateDTO;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public interface StudentService {
      *
      * @param student student to be deleted
      */
-    boolean removeStudent(Student student);
+    void removeStudent(Student student);
 
     /**
      * Method updates student in database

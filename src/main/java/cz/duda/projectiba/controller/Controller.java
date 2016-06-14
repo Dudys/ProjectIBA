@@ -1,9 +1,9 @@
 package cz.duda.projectiba.controller;
 
 import cz.duda.projectiba.model.Student;
-import cz.duda.projectiba.model.StudentCreateDTO;
+import cz.duda.projectiba.dto.StudentCreateDTO;
 import cz.duda.projectiba.service.StudentService;
-import cz.duda.projectiba.service.impl.StudentServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -31,7 +31,8 @@ public class Controller {
 
     final static Logger log = LoggerFactory.getLogger(Controller.class);
 
-    private StudentService studentService = new StudentServiceImpl();
+    @Autowired
+    private StudentService studentService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String showStudent(Model model){

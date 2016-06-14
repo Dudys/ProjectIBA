@@ -1,7 +1,7 @@
 package cz.duda.projectiba.service.impl;
 
 import cz.duda.projectiba.model.Student;
-import cz.duda.projectiba.model.StudentCreateDTO;
+import cz.duda.projectiba.dto.StudentCreateDTO;
 import cz.duda.projectiba.service.StudentService;
 
 import java.util.ArrayList;
@@ -44,11 +44,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean removeStudent(Student student){
+    public void removeStudent(Student student){
         if(student == null){
             throw new IllegalArgumentException("Input student cannot be null");
         }
-        return students.remove(student);
+        students.remove(student);
     }
 
     @Override

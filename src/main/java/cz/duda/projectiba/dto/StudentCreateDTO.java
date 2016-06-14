@@ -1,4 +1,4 @@
-package cz.duda.projectiba.model;
+package cz.duda.projectiba.dto;
 
 import lombok.Data;
 import org.joda.time.LocalDate;
