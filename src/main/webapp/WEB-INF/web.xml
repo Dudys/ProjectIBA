@@ -55,7 +55,7 @@
         </servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>cz.duda.projectiba.rest.Application</param-value>
+            <param-value>cz.duda.projectiba.rest.RestApplication</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

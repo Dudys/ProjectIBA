@@ -10,6 +10,8 @@ import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class implements methods of interface StudentService
@@ -17,6 +19,8 @@ import org.dozer.Mapper;
  * @author Jan Duda
  */
 public class StudentServiceImpl implements StudentService {
+
+    private final static Logger log = LoggerFactory.getLogger(StudentServiceImpl.class);
 
     private List<Student> students;
     private long idCounter;
@@ -34,6 +38,8 @@ public class StudentServiceImpl implements StudentService {
             throw new IllegalArgumentException("Input student cannot be null!");
         }
 
+        log.debug("creating a new student={}", student);
+
         Student newStudent = mapper.map(student, Student.class);
         newStudent.setId(idCounter);
         newStudent.setBirthdate(student.getBirthdate());
@@ -48,11 +54,18 @@ public class StudentServiceImpl implements StudentService {
         if(student == null){
             throw new IllegalArgumentException("Input student cannot be null");
         }
+        log.debug("removing student={}", student);
+
         students.remove(student);
     }
 
     @Override
     public boolean updateStudent(Student student){
+        if(student == null){
+            throw new IllegalArgumentException("Input student cannot be null");
+        }
+        log.debug("updating student={}", student);
+
         boolean updated = false;
 
         for (int i = 0; i < students.size(); i++) {
@@ -67,11 +80,14 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAllStudents(){
+        log.debug("getting all students");
         return Collections.unmodifiableList(students);
     }
 
     @Override
     public Student findById(long id){
+        log.debug("getting student with id = " + id);
+
         for (int i = 0; i < students.size(); i++){
             if (students.get(i).getId() == id){
                 return students.get(i);

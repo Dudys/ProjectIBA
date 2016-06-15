@@ -32,6 +32,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="${pageContext.request.contextPath}/student">Project IBA</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/student">Home</a>
         </div>
     </div>
 </nav>
@@ -53,11 +54,11 @@
     </div>
 
     <jsp:invoke fragment="body"/>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.3.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <spring:url value="/resources/js/validation.js" var="validationJS"/>
     <spring:url value="/resources/js/datepicker.js" var="datepickerJS"/>
     <script src="${validationJS}"></script>

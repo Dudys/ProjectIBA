@@ -36,14 +36,14 @@ public class Controller {
 
     @RequestMapping(method = RequestMethod.GET)
     public String showStudent(Model model){
-        log.info("All students");
+        log.debug("All students");
         model.addAttribute("students", studentService.getAllStudents());
         return "student/list";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newStudent(Model model){
-        log.info("new student");
+        log.debug("new student");
         model.addAttribute("newStudent", new StudentCreateDTO());
         return "student/new";
     }
@@ -61,7 +61,7 @@ public class Controller {
                                 BindingResult bindingResult,
                                 RedirectAttributes redirectAttributes,
                                 UriComponentsBuilder uriBuilder){
-        log.info("createStudent(newStudent={})", student);
+        log.debug("createStudent(newStudent={})", student);
 
         if (bindingResult.hasErrors()) {
             for (ObjectError ge : bindingResult.getGlobalErrors()) {
@@ -99,7 +99,7 @@ public class Controller {
                              RedirectAttributes redirectAttributes,
                              UriComponentsBuilder uriBuilder) {
 
-        log.error("update(StudentUpdate={})", student);
+        log.debug("update(StudentUpdate={})", student);
 
         if (bindingResult.hasErrors()) {
             for (ObjectError ge : bindingResult.getGlobalErrors()) {
@@ -124,7 +124,7 @@ public class Controller {
     public String detailStudent(@PathVariable("id") long id,
                                 Model model) {
 
-        log.error("Detail of student with " + id);
+        log.debug("Detail of student with " + id);
         Student student = studentService.findById(id);
         if (student == null) {
             return "redirect:/";
